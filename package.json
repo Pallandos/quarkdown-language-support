@@ -1,0 +1,25 @@
+{
+  "name": "quarkdown-syntax-highlighting",
+  "displayName": "Quarkdown syntax highlighting",
+  "description": "Syntax highlighting for Qarkdown for Visual Studio Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.102.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "qd",
+      "aliases": ["Quarkdown", "qd"],
+      "extensions": [".qd",".qmd"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "qd",
+      "scopeName": "",
+      "path": "./syntaxes/qd.tmLanguage.json"
+    }]
+  }
+}
