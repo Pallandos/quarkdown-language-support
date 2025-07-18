@@ -3,30 +3,85 @@
 	"name": "Quarkdown",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#headers"
 		},
 		{
-			"include": "#strings"
+			"include": "#bold"
+		},
+		{
+			"include": "#italic"
+		},
+		{
+			"include": "#code"
+		},
+		{
+			"include": "#link"
+		},
+		{
+			"include": "#function"
 		}
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.qd",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.qd",
-			"begin": "\"",
-			"end": "\"",
+		"headers": {
 			"patterns": [
 				{
-					"name": "constant.character.escape.qd",
-					"match": "\\\\."
+					"name": "markup.heading.qd",
+					"match": "^(#{1,6})\\s.*$"
+				}
+			]
+		},
+		"bold": {
+			"patterns": [
+				{
+					"name": "markup.bold.qd",
+					"match": "\\*\\*(.*?)\\*\\*"
+				}
+			]
+		},
+		"italic": {
+			"patterns": [
+				{
+					"name": "markup.italic.qd",
+					"match": "\\*(.*?)\\*"
+				}
+			]
+		},
+		"code": {
+			"patterns": [
+				{
+					"name": "markup.inline.code.qd",
+					"match": "`([^`]+)`"
+				}
+			]
+		},
+		"link": {
+			"patterns": [
+				{
+					"name": "markup.underline.link.qd",
+					"match": "\\[(.*?)\\]\\((.*?)\\)"
+				}
+			]
+		},
+		"function": {
+			"patterns": [
+				{
+					"name": "meta.function.qd",
+					"begin": "\\B\\.[a-zA-Z]+\\s",
+					"beginCaptures": {
+						"0": {
+							"name": "entity.name.function.qd"
+						}
+					},
+					"end": "$",
+					"patterns": [
+						{
+							"name": "meta.function.parameters.qd",
+							"match": "([a-zA-Z]+:)?\\{.*?\\}"
+						}
+					]
 				}
 			]
 		}
 	},
-	"scopeName": ""
+	"scopeName": "source.qd"
 }

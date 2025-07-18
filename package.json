@@ -18,7 +18,7 @@
     }],
     "grammars": [{
       "language": "qd",
-      "scopeName": "",
+      "scopeName": "source.qd",
       "path": "./syntaxes/qd.tmLanguage.json"
     }]
   }
