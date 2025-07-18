@@ -63,7 +63,7 @@
 		},
 		"quote": {
 			"patterns": [{
-				"name": "markup.block.qd",
+				"name": "markup.quote.qd",
 				"match": ">\\s*(.*)"
 			}]
 		},
