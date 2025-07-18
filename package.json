@@ -2,6 +2,7 @@
   "name": "quarkdown-syntax-highlighting",
   "displayName": "Quarkdown syntax highlighting",
   "description": "Syntax highlighting for Qarkdown for Visual Studio Code",
+  "icon": "assets/img/quarkdown.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.102.0"

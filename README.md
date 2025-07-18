@@ -1,6 +1,6 @@
-# quarkdown-syntax-highlighting README
+# quarkdown-syntax-highlighting 
 
-This is the README for your extension "quarkdown-syntax-highlighting". After writing up a brief description, we recommend including the following sections.
+This extension provides syntax support for the amzing [Quarkdown language](https://quarkdown.com/)
 
 ## Features
 

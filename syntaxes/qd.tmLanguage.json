@@ -2,24 +2,14 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Quarkdown",
 	"patterns": [
-		{
-			"include": "#headers"
-		},
-		{
-			"include": "#bold"
-		},
-		{
-			"include": "#italic"
-		},
-		{
-			"include": "#code"
-		},
-		{
-			"include": "#link"
-		},
-		{
-			"include": "#function"
-		}
+		{"include": "#headers"},
+		{"include": "#bold"},
+		{"include": "#italic"},
+		{"include": "#code"},
+		{"include": "#link"},
+		{"include": "#function"},
+		{"include": "#quote"},
+		{"include": "#comment"}
 	],
 	"repository": {
 		"headers": {
@@ -61,6 +51,21 @@
 					"match": "\\[(.*?)\\]\\((.*?)\\)"
 				}
 			]
+		},
+		"comment": {
+			"patterns": [
+				{
+					"name": "comment.block.qd",
+					"begin": "<!--",
+					"end": "-->"
+				}
+			]
+		},
+		"quote": {
+			"patterns": [{
+				"name": "markup.block.qd",
+				"match": ">\\s*(.*)"
+			}]
 		},
 		"function": {
 			"patterns": [
