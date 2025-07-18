@@ -2,6 +2,10 @@
   "name": "quarkdown-syntax-highlighting",
   "displayName": "Quarkdown syntax highlighting",
   "description": "Syntax highlighting for Qarkdown for Visual Studio Code",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pallandos/quarkdown-syntax-highlighting"
+  },
   "icon": "assets/img/quarkdown.png",
   "version": "0.0.1",
   "engines": {
