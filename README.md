@@ -1,4 +1,4 @@
-# quarkdown-syntax-highlighting 
+# Quarkdown Language Support
 
 This extension provides syntax support for the amazing [Quarkdown language](https://quarkdown.com/). 
 

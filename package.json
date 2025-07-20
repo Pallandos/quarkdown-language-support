@@ -1,10 +1,10 @@
 {
-  "name": "quarkdown-syntax-highlighting",
-  "displayName": "Quarkdown syntax highlighting",
-  "description": "Syntax highlighting for Qarkdown for Visual Studio Code",
+  "name": "quarkdown-language-support",
+  "displayName": "Quarkdown Language Support",
+  "description": "Complete lannguage support for Quarkdown, syntax highlighting, documentation and more.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pallandos/quarkdown-syntax-highlighting"
+    "url": "https://github.com/pallandos/quarkdown-language-support"
   },
   "icon": "assets/img/quarkdown.png",
   "version": "0.0.1",
@@ -27,4 +27,5 @@
       "path": "./syntaxes/qd.tmLanguage.json"
     }]
   }
+
 }
