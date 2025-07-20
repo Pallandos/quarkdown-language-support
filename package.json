@@ -6,6 +6,16 @@
     "type": "git",
     "url": "https://github.com/pallandos/quarkdown-language-support"
   },
+  "keywords": [
+    "quarkdown",
+    "qd",
+    "syntax-highlighting",
+    "language-support",
+    "markdown"
+  ],
+  "bugs": {
+    "url": "https://github.com/pallandos/quarkdown-language-support/issues"
+  },
   "icon": "assets/img/quarkdown.png",
   "version": "0.0.1",
   "engines": {

@@ -1,6 +1,6 @@
 # Quarkdown Language Support
 
-This extension provides syntax support for the amazing [Quarkdown language](https://quarkdown.com/). 
+This extension provides language support for the amazing [Quarkdown language](https://quarkdown.com/). 
 
 ## Features
 
