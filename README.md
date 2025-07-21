@@ -1,5 +1,13 @@
 # Quarkdown Language Support
 
+<div align="center">
+
+![Static Badge](https://img.shields.io/badge/Licence-GNU_GPLv3-blue?style=flat)
+![Static Badge](https://img.shields.io/badge/Version-1.0.0-green?style=flat)
+
+
+</div>
+
 This extension provides language support for the amazing [Quarkdown language](https://quarkdown.com/). 
 
 ## Features
