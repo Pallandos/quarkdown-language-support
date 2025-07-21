@@ -3,7 +3,7 @@
 <div align="center">
 
 ![Static Badge](https://img.shields.io/badge/Licence-GNU_GPLv3-blue?style=flat)
-![Static Badge](https://img.shields.io/badge/Version-1.0.0-green?style=flat)
+![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/pallandos.quarkdown?color=green)
 
 </div>
 
