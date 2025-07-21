@@ -13,11 +13,21 @@
     "language-support",
     "markdown"
   ],
+  "license": "GNU General Public License v3.0",
   "bugs": {
     "url": "https://github.com/pallandos/quarkdown-language-support/issues"
   },
-  "icon": "assets/img/quarkdown.png",
-  "version": "0.0.1",
+  "icon": "assets/img/quarkdown-light.png",
+  "galleryBanner": {
+    "color": "#262626",
+    "theme": "dark",
+    "logo": "assets/img/quarkdown-light.png"
+  },
+  "publisher": "Pallandos",
+  "author": {
+    "name": "Pallandos"
+  },
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.102.0"
   },
@@ -28,7 +38,7 @@
     "languages": [{
       "id": "qd",
       "aliases": ["Quarkdown", "qd"],
-      "extensions": [".qd",".qmd"],
+      "extensions": [".qd", ".qmd"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{

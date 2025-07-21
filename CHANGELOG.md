@@ -2,16 +2,14 @@
 
 All notable changes to the "Quarkdown Language Support" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [1.0.0] - 2025-07-21
 
-## [Unreleased]
-
-- Initial release
+Initial release
 
 ### Added
 
-- all syntax from Markdown
-- syntax support for :
-  - functions
-  - maths
-  - special strings
+- All syntax from Markdown
+- Syntax support for:
+  - Functions
+  - Mathematics
+  - Special strings
