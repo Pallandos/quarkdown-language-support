@@ -10,7 +10,8 @@
 		{"include": "#function"},
 		{"include": "#quote"},
 		{"include": "#comment"},
-		{"include": "#maths"}
+		{"include": "#maths"},
+		{"include": "#list"}
 	],
 	"repository": {
 		"headers": {
@@ -59,6 +60,28 @@
 					"name": "comment.block.qd",
 					"begin": "<!--",
 					"end": "-->"
+				}
+			]
+		},
+		"list": {
+			"patterns": [
+				{
+					"name": "markup.list.unnumbered.qd",
+					"match": "^(\\s*)([-*])\\s.*$",
+					"captures": {
+						"2": {
+							"name": "punctuation.definition.list.begin.markdown.qd"
+						}
+					}
+				},
+				{
+					"name": "markup.numbered.list.qd",
+					"match": "^(\\s*)(\\d+)\\.\\s.*$",
+					"captures": {
+						"2": {
+							"name": "punctuation.definition.list.begin.markdown.qd"
+						}
+					}
 				}
 			]
 		},
