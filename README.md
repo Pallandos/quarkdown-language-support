@@ -4,26 +4,19 @@ This extension provides language support for the amazing [Quarkdown language](ht
 
 ## Features
 
-Syntax highlighting for Quarkdown (`.md`).
+Language support for Quarkdown (`.qd`).
 
-## Extension Settings
+## About **`Quarkdown`**
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+**`Quarkdown`**  is a modern Markdown-based typesetting system, designed around the key concept of versatility, by seamlessly compiling a project into a print-ready book or an interactive presentation. All through an incredibly powerful Turing-complete extension of Markdown, ensuring your ideas flow automatically into paper.
 
-For example:
+You can find all official ressources from Quarkdown here :
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- [Repository](https://github.com/iamgio/quarkdown)
+- [Website](https://quarkdown.com/)
+- [Documentation](https://quarkdown.com/docs/)
 
 ## Release Notes
-
-Users appreciate release notes as you update your extension.
 
 ### 1.0.0
 
