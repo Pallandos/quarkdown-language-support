@@ -67,7 +67,7 @@
 			"patterns": [
 				{
 					"name": "markup.list.unnumbered.qd",
-					"begin": "^(\\s*)([-*])\\s.+",
+					"begin": "^(\\s*)([-*])( )",
 					"beginCaptures": {
 						"2": {
 							"name": "punctuation.definition.list.begin.markdown.qd"
@@ -80,7 +80,7 @@
 				},
 				{
 					"name": "markup.numbered.list.qd",
-					"begin": "^(\\s*)(\\d+)\\.\\s.*$",
+					"begin": "^(\\s*)(\\d+)\\.\\s",
 					"beginCaptures": {
 						"2": {
 							"name": "punctuation.definition.list.begin.markdown.qd"
@@ -96,12 +96,12 @@
 		"quote": {
 			"patterns": [{
 				"name": "markup.quote.qd",
-				"match": "(>)\\s*\\S+(.*)",
+				"match": "^( )*(>)\\s*\\S+(.*)",
 				"captures": {
-					"1": {
+					"2": {
 						"name": "punctuation.definition.quote.begin.markdown.qd"
 					},
-					"2": {
+					"3": {
 						"name": "markup.quote.content.qd"
 					}
 				}
@@ -130,7 +130,7 @@
 			"patterns": [
 				{
 					"name": "meta.function.qd",
-					"begin": "(^| )\\.[a-zA-Z]+\\s",
+					"begin": "(?<=(^| ))\\.[a-zA-Z]+( )?",
 					"beginCaptures": {
 						"0": {
 							"name": "entity.name.function.qd"
@@ -148,11 +148,11 @@
 		},
 		"inline": {
 			"patterns": [
+				{ "include": "#function"},
 				{ "include": "#bold" },
 				{ "include": "#italic" },
 				{ "include": "#code" },
-				{ "include": "#link" },
-				{ "include": "#function" }
+				{ "include": "#link" }
 			]
 		}
 	},
