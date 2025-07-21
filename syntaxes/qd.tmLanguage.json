@@ -22,6 +22,14 @@
 				}
 			]
 		},
+		"code": {
+			"patterns": [
+				{
+					"name": "markup.inline.code.qd",
+					"match": "`([^`]+)`"
+				}
+			]
+		},
 		"bold": {
 			"patterns": [
 				{
@@ -35,14 +43,6 @@
 				{
 					"name": "markup.italic.qd",
 					"match": "\\*(.*?)\\*"
-				}
-			]
-		},
-		"code": {
-			"patterns": [
-				{
-					"name": "markup.inline.code.qd",
-					"match": "`([^`]+)`"
 				}
 			]
 		},
@@ -88,22 +88,30 @@
 		"quote": {
 			"patterns": [{
 				"name": "markup.quote.qd",
-				"match": ">\\s*(.*)"
+				"match": "(>)\\s*\\S+(.*)",
+				"captures": {
+					"1": {
+						"name": "punctuation.definition.quote.begin.markdown.qd"
+					},
+					"2": {
+						"name": "markup.quote.content.qd"
+					}
+				}
 			}]
 		},
 		"maths": {
 			"patterns": [
 				{
-					"name": "markup.math.inline.qd",
+					"name": "markup.math.inline.markdown.qd",
 					"match": "\\B\\$\\s.*\\s\\$\\B"
 				},
 				{
-					"name": "markup.math.block.qd",
+					"name": "markup.math.block.markdown.qd",
 					"begin": "^(\\$){3}\\s*$",
 					"end": "^(\\$){3}\\s*$",
 					"patterns": [
 						{
-							"name": "markup.math.content.qd",
+							"name": "markup.math.content.markdown.qd",
 							"match": "^(?!\\$\\$\\$\\s*$).+"
 						}
 					]
