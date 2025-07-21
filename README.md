@@ -1,4 +1,4 @@
-# Quarkdown Language Support
+# Quarkdown
 
 <div align="center">
 

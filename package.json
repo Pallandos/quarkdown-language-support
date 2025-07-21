@@ -1,6 +1,6 @@
 {
-  "name": "quarkdown-language-support",
-  "displayName": "Quarkdown Language Support",
+  "name": "quarkdown",
+  "displayName": "Quarkdown",
   "description": "Complete language support for Quarkdown, syntax highlighting, documentation and more.",
   "repository": {
     "type": "git",
