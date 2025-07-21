@@ -11,7 +11,8 @@
 		{"include": "#quote"},
 		{"include": "#comment"},
 		{"include": "#maths"},
-		{"include": "#list"}
+		{"include": "#list"},
+		{"include": "#special_strings"}
 	],
 	"repository": {
 		"headers": {
@@ -60,6 +61,70 @@
 					"name": "comment.block.qd",
 					"begin": "<!--",
 					"end": "-->"
+				}
+			]
+		},
+		"special_strings": {
+			"patterns": [
+				{
+					"name": "string.interpolated.copyright.qd",
+					"match": "(?<!\\\\)\\(C\\)"
+				},
+				{
+					"name": "string.interpolated.registered.qd",
+					"match": "(?<!\\\\)\\(R\\)"
+				},
+				{
+					"name": "string.interpolated.trademark.qd",
+					"match": "(?<!\\\\)\\(TM\\)"
+				},
+				{
+					"name": "string.interpolated.double_right_arrow.qd",
+					"match": "(?<!\\\\)=>"
+				},
+				{
+					"name": "string.interpolated.double_left_arrow.qd",
+					"match": "(?<!\\\\)<=="
+				},
+				{
+					"name": "string.interpolated.gte.qd",
+					"match": "(?<!\\\\)>="
+				},
+				{
+					"name": "string.interpolated.lte.qd",
+					"match": "(?<!\\\\)<="
+				},
+				{
+					"name": "string.interpolated.single_right_arrow.qd",
+					"match": "(?<!\\\\)->"
+				},
+				{
+					"name": "string.interpolated.single_left_arrow.qd",
+					"match": "(?<!\\\\)<-"
+				},
+				{
+					"name": "string.interpolated.notequal.qd",
+					"match": "(?<!\\\\)!="
+				},
+				{
+					"name": "string.interpolated.plusminus.qd",
+					"match": "(?<!\\\\)\\+-"
+				},
+				{
+					"name": "string.interpolated.typo_left_apostrophe.qd",
+					"match": "(?<![\\\\\\w])'(?=\\w)"
+				},
+				{
+					"name": "string.interpolated.typo_right_apostrophe.qd",
+					"match": "(?<![\\\\\\s])'(?=\\W)"
+				},
+				{
+					"name": "string.interpolated.double_right_quote.qd",
+					"match": "(?<![\\\\\\w])\"(?=\\S)"
+				},
+				{
+					"name": "string.interpolated.double_left_quote.qd",
+					"match": "(?<![\\\\\\s])\"(?=\\W)"
 				}
 			]
 		},
