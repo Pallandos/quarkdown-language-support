@@ -28,7 +28,7 @@
   "author": {
     "name": "Pallandos"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.102.0"
   },
@@ -36,17 +36,26 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "qd",
-      "aliases": ["Quarkdown", "qd"],
-      "extensions": [".qd", ".qmd"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "qd",
-      "scopeName": "source.qd",
-      "path": "./syntaxes/qd.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "qd",
+        "aliases": [
+          "Quarkdown",
+          "qd"
+        ],
+        "extensions": [
+          ".qd",
+          ".qmd"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "qd",
+        "scopeName": "source.qd",
+        "path": "./syntaxes/qd.tmLanguage.json"
+      }
+    ]
   }
-
 }
