@@ -3,12 +3,36 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = activate;
 exports.deactivate = deactivate;
 const vscode = require("vscode");
+const path = require("path");
+const fs = require("fs");
 function activate(context) {
     console.log('Quarkdown extension activated');
-    const completionProvider = vscode.languages.registerCompletionItemProvider('qd', new QuarkdownCompletionProvider(), ...getCompletionTriggers());
+    const completionProvider = vscode.languages.registerCompletionItemProvider('qd', new QuarkdownCompletionProvider(context), ...getCompletionTriggers());
     context.subscriptions.push(completionProvider);
 }
 class QuarkdownCompletionProvider {
+    constructor(context) {
+        this.context = context;
+        this.loadSuggestions();
+    }
+    loadSuggestions() {
+        try {
+            const suggestionsPath = path.join(this.context.extensionPath, 'src', 'data', 'suggestions.json');
+            const suggestionsData = fs.readFileSync(suggestionsPath, 'utf8');
+            const parsed = JSON.parse(suggestionsData);
+            // Convertir les strings 'kind' en enum vscode.CompletionItemKind
+            this.suggestions = {
+                functions: parsed.functions.map((f) => ({
+                    ...f,
+                    kind: vscode.CompletionItemKind[f.kind]
+                }))
+            };
+        }
+        catch (error) {
+            console.error('Erreur lors du chargement des suggestions:', error);
+            this.suggestions = { functions: [] };
+        }
+    }
     provideCompletionItems(document, position, token, context) {
         const completions = [];
         const lineText = document.lineAt(position).text;
@@ -22,31 +46,14 @@ class QuarkdownCompletionProvider {
         return completions;
     }
     detectContext(linePrefix, document, position) {
-        // Détection du contexte fonction : un point suivi de caractères sans espace
-        if (linePrefix.match(/( )\.\w*$/)) {
+        // Get function context
+        if (linePrefix.match(/(^| )\.\w*$/)) {
             return 'function';
         }
         return 'general';
     }
     getFunctionCompletions() {
-        const functions = [
-            {
-                label: 'center',
-                insertText: 'center',
-                detail: 'Centrer le contenu',
-                documentation: 'Centre le contenu spécifié',
-                kind: vscode.CompletionItemKind.Function
-            },
-            {
-                label: 'align',
-                insertText: 'align',
-                detail: 'Aligner le contenu',
-                documentation: 'Aligne le contenu selon l\'option choisie',
-                kind: vscode.CompletionItemKind.Function
-            },
-            // TODO : add more functions
-        ];
-        return functions.map(f => this.createCompletionItem(f));
+        return this.suggestions.functions.map(f => this.createCompletionItem(f));
     }
     createCompletionItem(data) {
         const item = new vscode.CompletionItem(data.label, data.kind);

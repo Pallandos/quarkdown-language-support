@@ -36,6 +36,9 @@
     "Programming Languages"
   ],
   "main": "./out/extension.js",
+  "files": [
+    "src/data/suggestions.json"
+  ],
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",

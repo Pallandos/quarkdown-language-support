@@ -1,0 +1,25 @@
+{
+  "functions": [
+    {
+      "label": "center",
+      "insertText": "center",
+      "detail": "Centrer le contenu",
+      "documentation": "Centre le contenu spécifié",
+      "kind": "Function"
+    },
+    {
+      "label": "bold",
+      "insertText": "bold",
+      "detail": "Mettre en gras",
+      "documentation": "Met le contenu en gras",
+      "kind": "Function"
+    },
+    {
+      "label": "italic",
+      "insertText": "italic",
+      "detail": "Mettre en italique",
+      "documentation": "Met le contenu en italique",
+      "kind": "Function"
+    }
+  ]
+}

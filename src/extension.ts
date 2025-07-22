@@ -1,4 +1,6 @@
 import * as vscode from 'vscode';
+import * as path from 'path';
+import * as fs from 'fs';
 
 interface CompletionData {
     label: string;
@@ -9,12 +11,16 @@ interface CompletionData {
     triggerCharacters?: string[];
 }
 
+interface SuggestionsData {
+    functions: CompletionData[];
+}
+
 export function activate(context: vscode.ExtensionContext) {
     console.log('Quarkdown extension activated');
 
     const completionProvider = vscode.languages.registerCompletionItemProvider(
         'qd',
-        new QuarkdownCompletionProvider(),
+        new QuarkdownCompletionProvider(context),
         ...getCompletionTriggers()
     );
 
@@ -22,6 +28,30 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 class QuarkdownCompletionProvider implements vscode.CompletionItemProvider {
+    private suggestions!: SuggestionsData;
+
+    constructor(private context: vscode.ExtensionContext) {
+        this.loadSuggestions();
+    }
+
+    private loadSuggestions(): void {
+        try {
+            const suggestionsPath = path.join(this.context.extensionPath, 'src', 'data', 'suggestions.json');
+            const suggestionsData = fs.readFileSync(suggestionsPath, 'utf8');
+            const parsed = JSON.parse(suggestionsData);
+            
+            // Convertir les strings 'kind' en enum vscode.CompletionItemKind
+            this.suggestions = {
+                functions: parsed.functions.map((f: any) => ({
+                    ...f,
+                    kind: vscode.CompletionItemKind[f.kind as keyof typeof vscode.CompletionItemKind]
+                }))
+            };
+        } catch (error) {
+            console.error('Erreur lors du chargement des suggestions:', error);
+            this.suggestions = { functions: [] };
+        }
+    }
     
     provideCompletionItems(
         document: vscode.TextDocument,
@@ -46,8 +76,8 @@ class QuarkdownCompletionProvider implements vscode.CompletionItemProvider {
     }
 
     private detectContext(linePrefix: string, document: vscode.TextDocument, position: vscode.Position): string {
-        // Détection du contexte fonction : un point suivi de caractères sans espace
-        if (linePrefix.match(/( )\.\w*$/)) {
+        // Get function context
+        if (linePrefix.match(/(^| )\.\w*$/)) {
             return 'function';
         }
         
@@ -55,18 +85,7 @@ class QuarkdownCompletionProvider implements vscode.CompletionItemProvider {
     }
 
     private getFunctionCompletions(): vscode.CompletionItem[] {
-        const functions: CompletionData[] = [
-            {
-                label: 'center',
-                insertText: 'center',
-                detail: 'Centrer le contenu',
-                documentation: 'Centre le contenu spécifié',
-                kind: vscode.CompletionItemKind.Function
-            },
-            // TODO : add more functions
-        ];
-
-        return functions.map(f => this.createCompletionItem(f));
+        return this.suggestions.functions.map(f => this.createCompletionItem(f));
     }
 
     private createCompletionItem(data: CompletionData): vscode.CompletionItem {
