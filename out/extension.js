@@ -15,17 +15,15 @@ class QuarkdownCompletionProvider {
         const linePrefix = lineText.substring(0, position.character);
         // Détection du contexte
         const contextType = this.detectContext(linePrefix, document, position);
-        switch (contextType) {
-            case 'function':
-                completions.push(...this.getFunctionCompletions());
-            default:
-                completions.push(...this.getAllCompletions());
+        // Seulement dans le contexte des fonctions
+        if (contextType === 'function') {
+            completions.push(...this.getFunctionCompletions());
         }
         return completions;
     }
     detectContext(linePrefix, document, position) {
-        // Détection des fonctions Quarkdown
-        if (linePrefix.includes('.') && !linePrefix.includes(' ')) {
+        // Détection du contexte fonction : un point suivi de caractères sans espace
+        if (linePrefix.match(/( )\.\w*$/)) {
             return 'function';
         }
         return 'general';
@@ -33,32 +31,27 @@ class QuarkdownCompletionProvider {
     getFunctionCompletions() {
         const functions = [
             {
-                label: '.center{}',
-                insertText: '.center{${1:contenu}}',
+                label: 'center',
+                insertText: 'center',
                 detail: 'Centrer le contenu',
                 documentation: 'Centre le contenu spécifié',
                 kind: vscode.CompletionItemKind.Function
             },
             {
-                label: '.align{}',
-                insertText: '.align{${1|left,center,right,justify|}}{\n\t${2:contenu}\n}',
+                label: 'align',
+                insertText: 'align',
                 detail: 'Aligner le contenu',
                 documentation: 'Aligne le contenu selon l\'option choisie',
                 kind: vscode.CompletionItemKind.Function
             },
-            // Ajoutez d'autres fonctions Quarkdown ici
+            // TODO : add more functions
         ];
         return functions.map(f => this.createCompletionItem(f));
-    }
-    getAllCompletions() {
-        return [
-            ...this.getFunctionCompletions(),
-        ];
     }
     createCompletionItem(data) {
         const item = new vscode.CompletionItem(data.label, data.kind);
         item.detail = data.detail;
-        item.insertText = new vscode.SnippetString(data.insertText);
+        item.insertText = data.insertText;
         if (data.documentation) {
             item.documentation = new vscode.MarkdownString(data.documentation);
         }
