@@ -15,6 +15,10 @@ Language support for Quarkdown (`.qd`) :
 
 - syntax highlighting
 
+## Future features
+
+This extension is still in its early days! I plan to add two main features : completion and documentation. Stay tuned for exciting news !
+
 ## About **`Quarkdown`**
 
 **`Quarkdown`**  is a modern Markdown-based typesetting system, designed around the key concept of versatility, by seamlessly compiling a project into a print-ready book or an interactive presentation. All through an incredibly powerful Turing-complete extension of Markdown, ensuring your ideas flow automatically into paper.

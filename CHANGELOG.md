@@ -2,6 +2,12 @@
 
 All notable changes to the "Quarkdown Language Support" extension will be documented in this file.
 
+## [Unreleased]
+
+### Added
+
+- Code Completion Proposals
+
 ## [1.0.0] - 2025-07-21
 
 Initial release
