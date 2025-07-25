@@ -6,7 +6,7 @@ All notable changes to the "Quarkdown Language Support" extension will be docume
 
 ### Added
 
-- Code Completion Proposals
+- Code Completion Proposals with included documentation
 
 ## [1.0.0] - 2025-07-21
 
