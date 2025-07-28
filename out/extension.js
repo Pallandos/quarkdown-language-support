@@ -17,19 +17,22 @@ class QuarkdownCompletionProvider {
     }
     loadSuggestions() {
         try {
-            const suggestionsPath = path.join(this.context.extensionPath, 'src', 'data', 'suggestions.json');
+            const suggestionsPath = path.join(this.context.extensionPath, 'src', 'data', 'functions.json');
             const suggestionsData = fs.readFileSync(suggestionsPath, 'utf8');
             const parsed = JSON.parse(suggestionsData);
-            // Convertir les strings 'kind' en enum vscode.CompletionItemKind
+            // Change the structure to match the expected format
             this.suggestions = {
                 functions: parsed.functions.map((f) => ({
-                    ...f,
-                    kind: vscode.CompletionItemKind[f.kind]
+                    label: f.name,
+                    insertText: f.name,
+                    detail: f.moduleName,
+                    documentation: f.shortDoc,
+                    kind: vscode.CompletionItemKind.Function
                 }))
             };
         }
         catch (error) {
-            console.error('Erreur lors du chargement des suggestions:', error);
+            console.error('Fail to load suggestions :', error);
             this.suggestions = { functions: [] };
         }
     }
