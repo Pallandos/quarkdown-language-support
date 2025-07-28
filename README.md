@@ -14,6 +14,7 @@ This extension provides language support for the amazing [Quarkdown language](ht
 Language support for Quarkdown (`.qd`) :
 
 - syntax highlighting
+- code completion proposals
 
 ## Future features
 

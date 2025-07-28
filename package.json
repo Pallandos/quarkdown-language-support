@@ -1,7 +1,7 @@
 {
   "name": "quarkdown",
   "displayName": "Quarkdown",
-  "description": "Language support for Quarkdown, including syntax highlighting, and more to come!",
+  "description": "Language support for Quarkdown, including syntax highlighting, code completion and more to come!",
   "repository": {
     "type": "git",
     "url": "https://github.com/pallandos/quarkdown-language-support"
