@@ -35,6 +35,21 @@
   "categories": [
     "Programming Languages"
   ],
+  "main": "./out/extension.js",
+  "files": [
+    "src/data/suggestions.json"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "@types/vscode": "^1.102.0",
+    "typescript": "^5.4.5"
+  },
   "contributes": {
     "languages": [
       {
