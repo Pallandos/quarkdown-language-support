@@ -19,7 +19,7 @@ Language support for Quarkdown (`.qd`) :
 
 This extension is still in its early days! I plan to add two main features : completion and documentation. Stay tuned for exciting news !
 
-> I am currently working on completion.
+> I am currently working on improving completion.
 
 ## About **`Quarkdown`**
 
@@ -32,6 +32,10 @@ You can find all official resources from Quarkdown here:
 - [Documentation](https://quarkdown.com/docs/)
 
 ## Release Notes
+
+### 1.1.0
+
+Added code completion proposals for the `stdlib`.
 
 ### 1.0.0
 
