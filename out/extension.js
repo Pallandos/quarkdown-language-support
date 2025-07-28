@@ -40,9 +40,9 @@ class QuarkdownCompletionProvider {
         const completions = [];
         const lineText = document.lineAt(position).text;
         const linePrefix = lineText.substring(0, position.character);
-        // Détection du contexte
+        // Detect context based on the line prefix
         const contextType = this.detectContext(linePrefix, document, position);
-        // Seulement dans le contexte des fonctions
+        // Only in the context of functions
         if (contextType === 'function') {
             completions.push(...this.getFunctionCompletions());
         }
