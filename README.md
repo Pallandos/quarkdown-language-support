@@ -34,6 +34,10 @@ You can find all official resources from Quarkdown here:
 
 ## Release Notes
 
+### 1.1.2
+
+Sync to support quarkdown v1.8.0.
+
 ### 1.1.0
 
 Added code completion proposals for the `stdlib`.
