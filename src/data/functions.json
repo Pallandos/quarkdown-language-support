@@ -556,7 +556,7 @@
       "parameters": [
         {
           "name": "body",
-          "description": "<dl>\n <ul>\n  <li>Likely a <a href=\"https://github.com/iamgio/quarkdown/wiki/syntax-of-a-function-call#block-vs-inline-function-calls\">body argument</a></li>\n </ul>\n</dl>\n<p class=\"paragraph\">content to clip</p>",
+          "description": "<dl>\n <ul>\n  <li>Likely a <a href=\"https://github.com/iamgio/quarkdown/wiki/syntax-of-a-function-call#block-vs-inline-function-calls\">body argument</a></li>\n </ul>\n</dl>\n<p class=\"paragraph\">content to rotate or orient in landscape</p>",
           "isOptional": false,
           "isLikelyNamed": false,
           "isLikelyBody": true
