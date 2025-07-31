@@ -8,7 +8,7 @@ All notable changes to the "Quarkdown Language Support" extension will be docume
 
 - Hover documentation
 
-## [1.1.2] - 2025-08-01
+## [1.2.0] - 2025-08-01
 
 Sync update to support quarkdown v1.8.0.
 

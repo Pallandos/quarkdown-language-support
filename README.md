@@ -34,7 +34,7 @@ You can find all official resources from Quarkdown here:
 
 ## Release Notes
 
-### 1.1.2
+### 1.2.0
 
 Sync to support quarkdown v1.8.0.
 
