@@ -899,6 +899,13 @@
       "shortDoc": "a fixed Lorem Ipsum text."
     },
     {
+      "name": "br",
+      "moduleName": "Text",
+      "parameters": [],
+      "isLikelyChained": false,
+      "shortDoc": "Creates a line break. In standard Markdown, this is also achievable with two spaces at the end of a line, but this function provides a more explicit and unambiguous way to insert a line break."
+    },
+    {
       "name": "text",
       "moduleName": "Text",
       "parameters": [
