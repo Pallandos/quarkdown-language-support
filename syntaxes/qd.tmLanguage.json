@@ -19,7 +19,7 @@
 			"patterns": [
 				{
 					"name": "markup.heading.qd",
-					"match": "^(\\s)*(#{1,6})\\s.*$"
+					"match": "^(\\s)*(#{1,6})!?\\s.*$"
 				}
 			]
 		},
