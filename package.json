@@ -75,6 +75,12 @@
         "scopeName": "source.qd",
         "path": "./syntaxes/qd.tmLanguage.json"
       }
-    ]
+    ],
+    "configurationDefaults": {
+      "[qd]": {
+        "editor.wordWrap": "on",
+        "editor.wrappingIndent": "same"
+      }
+    }
   }
 }
