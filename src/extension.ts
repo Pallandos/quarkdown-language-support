@@ -23,8 +23,8 @@ export function activate(context: vscode.ExtensionContext) {
         new QuarkdownCompletionProvider(context),
         ...getCompletionTriggers()
     );
-
     context.subscriptions.push(completionProvider);
+
 }
 
 class QuarkdownCompletionProvider implements vscode.CompletionItemProvider {
