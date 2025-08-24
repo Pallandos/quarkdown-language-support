@@ -79,7 +79,8 @@
     "configurationDefaults": {
       "[qd]": {
         "editor.wordWrap": "on",
-        "editor.wrappingIndent": "same"
+        "editor.wrappingIndent": "same",
+        "editor.wordBasedSuggestions": "off"
       }
     }
   }

@@ -7,13 +7,18 @@ All notable changes to the "Quarkdown Language Support" extension will be docume
 ### Added
 
 - Hover documentation
-- Word wrapping for better readability
+
+## [1.2.3] - 2025-08-24
+
+### Added
+
+- add configuration default to disable `wordBasedSuggestions`
 
 ## [1.2.2] - 2025-08-14
 
 ### Added 
 
-- adds configuration defaults to enable word wrapping
+- add configuration default to enable word wrapping
 
 ## [1.2.1] - 2025-08-01
 
