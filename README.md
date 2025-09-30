@@ -7,6 +7,9 @@
 
 </div>
 
+> [!WARNING]
+> This extension is depreciated. Please use [the official extension](https://marketplace.visualstudio.com/items?itemName=quarkdown.quarkdown-vscode)
+
 This extension provides language support for the amazing [Quarkdown language](https://quarkdown.com/). 
 
 ## Features
